@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فطاير عطيات</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #D4A017;
+            --accent-color: #FFF8F0;
+            --neutral-dark: #5A3E2B;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--accent-color);
+            color: var(--neutral-dark);
+            line-height: 1.8;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #6B0F1A 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bakery-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            color: var(--accent-color);
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            position: relative;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 10px auto;
+        }
+
+        /* Menu Items Styling */
+        .menu-item-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 160, 23, 0.15);
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .item-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-description {
+            color: var(--neutral-dark);
+            font-size: 0.95rem;
+        }
+
+        .price-box {
+            background: rgba(212, 160, 23, 0.1);
+            padding: 8px 15px;
+            border-radius: 25px;
+            border-left: 3px solid var(--secondary-color);
+            text-align: center;
+        }
+
+        .price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #fffaf4;
+            padding: 4rem 0;
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 30px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: rgba(212, 160, 23, 0.1);
+        }
+
+        .phone-number:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.02);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-item-card {
+                text-align: center;
+            }
+
+            .price-box {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="الشعار" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#menu">القائمة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1 class="text-center">أطيب الفطاير بالمذاق الأصيل</h1>
+    </div>
+
+    <section id="about" class="container py-5">
+        <h2 class="section-title">رسالتنا</h2>
+        <p class="lead text-center mx-auto" style="max-width: 800px;">
+            عندما تشتري شيء صنع باليد انت لا تشتري مجرد غرض انك تشتري مئات الساعات من الامل وللإحباط والطموح واللحظات
+            الممتعة.
+        </p>
+    </section>
+
+    <section id="menu" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">قائمة المنتجات</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Product Items -->
+                    <div class="menu-item-card">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-3">
+                                <img src="image/فطاير.jpg" class="img-fluid rounded-3" alt="فطاير الجبنة">
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="item-title">فطاير محشية</h3>
+                                <p class="item-description">تتوفر لدينا فطاير محشية باللحمة او الجبنة حسب الطلب</p>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="price-box">
+                                    <span class="price">4k جنيه</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more products using the same structure -->
+                    <div class="menu-item-card">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-3">
+                                <img src="image/مخبوزات.jpg" class="img-fluid rounded-3" alt="مخبوزات">
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="item-title">خبيز</h3>
+                                <p class="item-description">تتوفر لدينا مجموعه من المخبوزات الشهية المعدة بكل اهتمام
+                                </p>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="price-box">
+                                    <span class="price">4k جنيه</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-card">
+                        <div class="row align-items-center g-4">
+                            <div class="col-md-3">
+                                <img src="image/خبيز.jpg" class="img-fluid rounded-3" alt="خبيز سوداني">
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="item-title"> ناعم </h3>
+                                <p class="item-description">الناعم السوداني تحضير منزلي </p>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="price-box">
+                                    <span class="price">4k جنيه</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container text-center">
+            <div class="contact-content">
+                <h2 class="section-title mb-4">تواصل معنا</h2>
+                <div class="contact-info">
+                    <a href="tel:0903752202" class="phone-number mb-4">
+                        <span aria-hidden="true">📱</span>
+                        0903752202
+                    </a>
+                    <p class="mb-3"> 📍 العنوان: حي الزهور , الدمازين </p>
+                    <p class="text-muted">🚚 يوجد توصيل للطلبات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
